@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <!--list view 第一行与顶部的距离（通过显示隐藏控制）-->
+    <View
+        android:id="@+id/v_padding"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+    <!--这个布局自布局设置高度不能通过根布局layout_height来设置，只能通过paddingTop 等内间距来控制高度-->
+    <LinearLayout
+        android:id="@+id/lly_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/projection_list_bottom"
+        android:layout_marginLeft="@dimen/defult_padding_16"
+        android:layout_marginRight="@dimen/defult_padding_16"
+        android:layout_marginTop="@dimen/projection_list_top"
+        android:background="@drawable/first_laundry_item_select"
+        android:backgroundTintMode="screen"
+        android:elevation="3dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:outlineProvider="background"
+        android:translationZ="2dp">
+
+    </LinearLayout>
+
+</LinearLayout>

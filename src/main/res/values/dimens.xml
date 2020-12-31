@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!--卡片布局 子布局设置距离顶部底部左右距离-->
+    <dimen name="projection_list_bottom">12dp</dimen>
+    <dimen name="projection_list_top">3dp</dimen>
+    <dimen name="projection_list_left_right_16">15dp</dimen>
+
+    <dimen name="defult_padding_16">16dp</dimen>
+    <dimen name="defult_padding_8">8dp</dimen>
+
+
+</resources>

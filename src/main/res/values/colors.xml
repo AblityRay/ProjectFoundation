@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+      <color name="colorPrimary">#6200EE</color>
+      <color name="colorPrimaryDark">#3700B3</color>
+      <color name="colorAccent">#03DAC5</color>
+
+    //  ----------------------------- 框架参数-start-------------------------------
+    <color name="app_not_network_button">#4194f0</color>
+    <color name="app_backgrade">#F5F6FA</color>
+    <color name="app_line_defult_color">#eeeeee</color>
+    <color name="app_black">#000000</color>
+    <color name="app_black_6">#666666</color>
+    <color name="app_textview_hint_color">#dbdbde</color>
+    <color name="card_view_background">#e1efff</color>
+
+    <color name="app_title_huise">#fcfcfc</color>
+    <color name="app_defult_background">#ffffff</color>
+    <color name="app_text">#999999</color>
+    <color name="app_not_color">#00000000</color>
+    <color name="background_profile">#dde4e9</color>
+    <!--loading-->
+    <color name="loading_background">#90000000</color>
+    <color name="toobar_text">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="app_whit">#FFFFFF</color>
+    <color name="first_page_bottom_text_false">#666666</color>
+    <color name="first_page_bottom_text_true">#4194f0</color>
+    <color name="app_network_error_text">#999999</color>
+    <color name="app_text_coler">#999999</color>
+    //  ----------------------------- 框架参数-end-------------------------------
+  </resources>

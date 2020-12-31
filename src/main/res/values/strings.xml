@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Nfc参数操作</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="xlistview_header_hint_loading">加载中</string>
+
+    <string name="no_network_networkerror">网络错误</string>
+
+    <string name="no_network_details">请查看设备\n已连接到网络并重新打开</string>
+    <string name="no_network_btn">重新获取数据</string>
+    <string name="no_network_nodatawasfound">没有数据被发现</string>
+</resources>

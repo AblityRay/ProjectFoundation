@@ -16,6 +16,7 @@ import com.haier.hailicommontlib.mvp.model.utils.LogUtil;
  * @author 宋庆伟
  */
 public class LocationService {
+
     private static LocationClient client = null;
     private static LocationClientOption mOption;
     private String city = "";//城市

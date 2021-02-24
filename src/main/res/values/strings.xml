@@ -17,4 +17,18 @@
     <string name="no_network_details">请查看设备\n已连接到网络并重新打开</string>
     <string name="no_network_btn">重新获取数据</string>
     <string name="no_network_nodatawasfound">没有数据被发现</string>
+
+
+    <!--弹框-->
+    <string name="show_que">确定</string>
+    <string name="show_cel">取消</string>
+    <string name="show_wan">完成</string>
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_seconds">秒</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
 </resources>

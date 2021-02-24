@@ -1,0 +1,140 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        useLibrary rootProject.ext.android.useLibrary
+        //测试单元需要代码
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //混淆规则
+        consumerProguardFiles "consumer-rules.pro"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64', 'mips', 'mips64', 'armeabi', 'x86'
+        }
+        sourceSets {
+            main {
+                res.srcDirs =
+                        [
+                                'src/main/res/layouts/activity',
+                                'src/main/res/layouts/adapter',
+                                'src/main/res/layouts/fragment',
+                                'src/main/res/layouts/utile',
+                                'src/main/res/layouts',
+                                'src/main/res'
+                        ]
+            }
+        }
+
+        compileOptions {
+            //使用JAVA8解析  invokedynamic requires --min-sdk-version >= 26
+            sourceCompatibility rootProject.ext.dependencies.sourceCompatibilityVersion
+            targetCompatibility rootProject.ext.dependencies.targetCompatibilityVersion
+        }
+
+
+    }
+
+    dependencies {
+        implementation fileTree(dir: "libs", include: ["*.jar"])
+
+//        implementation project(':hailiProcessorLib')
+//        api files('libs/hailiProcessorLib.jar')
+//        api project(':hailiProcessorLib')
+//        implementation files('libs/hailiProcessorLib.jar')
+//        annotationProcessor project(':hailiProcessorLib')
+
+        annotationProcessor "com.neenbedankt.gradle.plugins:android-apt:1.8"
+        api files('libs/commons-codec-1.3.jar')
+        //百度地图
+        api files('libs/BaiduLBS_Android.jar')
+        //基础组件库依赖(必须) Push 6.1.0版本必须升级新版本Common SDK
+        api 'com.umeng.umsdk:common:9.1.0'
+        api 'com.umeng.umsdk:utdid:1.5.2'
+        api 'com.umeng.umsdk:asms:1.1.3'
+        api 'com.umeng.umsdk:crash:0.0.4'
+        //友盟push相关依赖(必须)
+        api 'com.umeng.umsdk:push:6.1.0'
+        api 'com.umeng.umsdk:alicloud-httpdns:1.2.5'
+        api 'com.umeng.umsdk:alicloud-utils:1.1.5'
+        api 'com.umeng.umsdk:alicloud_beacon:1.0.1'
+        api 'com.umeng.umsdk:agoo-accs:3.3.8.8-open-fix2'
+        api 'com.umeng.umsdk:agoo_networksdk:3.5.5'
+        api 'com.umeng.umsdk:agoo_tlog:3.0.0.17'
+        api 'com.umeng.umsdk:agoo_tnet4android:3.1.14.9'
+        //微信api
+        api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+
+        //Android Support ，任何一个module依赖的官方包都在这里配置
+//        api(rootProject.ext.dependencies.appcompatV7) {
+//            exclude module: "support-annotations"
+//            exclude module: "support-v4"
+//        }
+//        api(rootProject.ext.dependencies.support_v4) {
+//            exclude module: "support-annotations"
+//        }
+        api rootProject.ext.dependencies.appcompat
+        api rootProject.ext.dependencies.annotation
+        //glide
+        api rootProject.ext.dependencies.glide
+        api rootProject.ext.dependencies.material
+        api rootProject.ext.dependencies.constraintlayout
+        api rootProject.ext.dependencies.navigation_fragment
+        api rootProject.ext.dependencies.navigation_ui
+        api rootProject.ext.dependencies.multidex
+//    api rootProject.ext.dependencies.dagger
+//    api rootProject.ext.dependencies.dagger_compiler
+        //组件之间通讯
+        api rootProject.ext.dependencies.arouter_api
+        api rootProject.ext.dependencies.arouter_compiler
+        api rootProject.ext.dependencies.auto_service
+//测试库--------start----------
+        api rootProject.ext.dependencies.junit_junit
+        api rootProject.ext.dependencies.androidx_test_junit
+        api rootProject.ext.dependencies.espresso_core
+        api rootProject.ext.dependencies.mockito_core
+        api rootProject.ext.dependencies.mockito_android
+        api rootProject.ext.dependencies.test_runner
+        api rootProject.ext.dependencies.test_rules
+        api rootProject.ext.dependencies.gson
+        api rootProject.ext.dependencies.converter_gson
+//测试库--------end----------
+//    view 库
+        api rootProject.ext.dependencies.recyclerview
+        api rootProject.ext.dependencies.transition
+        api rootProject.ext.dependencies.core_runtime
+        api rootProject.ext.dependencies.auto_service
+
+        api rootProject.ext.dependencies.cronet_embedded
+        api rootProject.ext.dependencies.disklrucache
+        api rootProject.ext.dependencies.jessyan_autosize
+    }
+
+//
+////   ---------依赖processor库start--------
+//    task processorTask(type: Exec) {
+//        //将编译出的java library对应的jar包，复制到app module的libs下
+//        commandLine 'cp', '../hailiProcessorLib/build/libs/hailiProcessorLib.jar', 'libs/'
+//    }
+//
+//    processorTask.dependsOn(':hailiProcessorLib:build')
+//    preBuild.dependsOn(processorTask)
+////   ----------依赖processor库end--------
+}
+
+
+
+
+
+
